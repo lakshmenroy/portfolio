@@ -1744,8 +1744,8 @@ img { max-width: 100%; display: block; }
   object-fit: cover !important;
   object-position: center top !important;
   display: block !important;
-  /* Zoom in and shift down slightly to hit the face */
-  transform: scale(2.2) translateY(18%);
+  /* Zoom in and shift down to frame the face */
+  transform: scale(1.8) translateY(28%);
   transform-origin: center top;
 }
 
