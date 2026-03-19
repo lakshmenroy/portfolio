@@ -1723,7 +1723,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 16px;
 }
 
-/* Real photo circle — same image as hero */
+/* Real photo circle — face crop only */
 .lp-avatar-photo {
   width: 88px;
   height: 88px;
@@ -1732,13 +1732,14 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 12px;
   border: 3px solid var(--bg-card);
   box-shadow: 0 4px 16px rgba(29,78,216,0.18);
+  flex-shrink: 0;
 }
 
 .lp-avatar-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: top 8%;   /* zoom into face area */
   display: block;
 }
 
