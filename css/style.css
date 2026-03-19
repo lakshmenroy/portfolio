@@ -1736,11 +1736,17 @@ img { max-width: 100%; display: block; }
 }
 
 .lp-avatar-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top 8%;   /* zoom into face area */
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  /* Zoom in and shift down slightly to hit the face */
+  transform: scale(2.2) translateY(18%);
+  transform-origin: center top;
 }
 
 .lp-badge {
