@@ -1735,18 +1735,14 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
-.lp-avatar-photo img {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover !important;
-  object-position: center top !important;
-  display: block !important;
-  /* Zoom in and shift down to frame the face */
-  transform: scale(1.8) translateY(28%);
-  transform-origin: center top;
+/* background-image approach — precise, no transform clipping issues */
+.lp-avatar-photo {
+  background-image: url('../assets/image-6.png');
+  /* zoom in ~4x so the face fills the 88px circle */
+  background-size: 400%;
+  /* shift right ~50% to centre horizontally, down ~8% to land on the face */
+  background-position: 50% 8%;
+  background-repeat: no-repeat;
 }
 
 .lp-badge {
