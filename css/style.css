@@ -438,21 +438,14 @@ img { max-width: 100%; display: block; }
 }
 
 /* Hero Visual */
-.hero-visual { display: flex; justify-content: center; }
+.hero-visual { display: flex; justify-content: center; align-items: center; }
 
-.hero-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 40px 32px 36px;
-  width: 100%;
-  max-width: 360px;
-  box-shadow: var(--shadow);
-  animation: float 6s ease-in-out infinite;
+/* Photo-only floating element — no card box */
+.hero-photo-only {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 0;
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -462,9 +455,9 @@ img { max-width: 100%; display: block; }
 
 .hero-avatar {
   position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 28px;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
 }
 
 .avatar-placeholder {
@@ -482,11 +475,12 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-/* Photo / SVG fills the circle */
+/* Photo fills the circle */
 .avatar-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   border-radius: 50%;
   display: block;
 }
@@ -494,105 +488,41 @@ img { max-width: 100%; display: block; }
 .avatar-ring {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid;
+  border: 1.5px solid;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
+/* Three progressively fainter rings */
 .ring-1 {
-  width: 160px; height: 160px;
-  border-color: rgba(29,78,216,0.25);
-  animation: spin 8s linear infinite;
+  width: 310px; height: 310px;
+  border-color: rgba(29,78,216,0.20);
+  animation: spin 10s linear infinite;
 }
 
 .ring-2 {
-  width: 180px; height: 180px;
-  border-color: rgba(220,38,38,0.15);
-  animation: spin 12s linear infinite reverse;
+  width: 350px; height: 350px;
+  border-color: rgba(220,38,38,0.10);
+  animation: spin 16s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 395px; height: 395px;
+  border-color: rgba(29,78,216,0.05);
+  animation: spin 22s linear infinite;
 }
 
 @keyframes spin { from { transform: translate(-50%,-50%) rotate(0deg); } to { transform: translate(-50%,-50%) rotate(360deg); } }
 
-/* Hero card identity block */
-.hero-card-identity {
-  text-align: center;
-  width: 100%;
-}
-
-.hero-card-name {
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -0.3px;
-  margin-bottom: 4px;
-}
-
-.hero-card-role {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 20px;
-}
-
-.hero-card-stat {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 14px 28px;
-  width: 100%;
-}
-
-.hero-card-stat-number {
-  font-size: 2.6rem;
-  font-weight: 900;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.hero-card-stat-suffix {
-  font-size: 1.6rem;
-  font-weight: 800;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-  margin-right: 8px;
-}
-
-.hero-card-stat-label {
-  display: block;
-  width: 100%;
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 4px;
-}
-
-/* Avatar rings (sized for 150px avatar) */
-.ring-1 {
-  width: 172px; height: 172px;
-  border-color: rgba(29,78,216,0.25);
-  animation: spin 8s linear infinite;
-}
-
-.ring-2 {
-  width: 194px; height: 194px;
-  border-color: rgba(220,38,38,0.15);
-  animation: spin 12s linear infinite reverse;
-}
+/* Remove old card identity/stat styles — no longer used */
+.hero-card-identity,
+.hero-card-name,
+.hero-card-role,
+.hero-card-stat,
+.hero-card-stat-number,
+.hero-card-stat-suffix,
+.hero-card-stat-label { display: none; }
 
 .scroll-indicator {
   position: absolute;
@@ -2070,7 +2000,11 @@ img { max-width: 100%; display: block; }
   .hero-description { margin: 0 auto 36px; }
   .hero-buttons, .hero-socials { justify-content: center; }
   .hero-visual { order: -1; }
-  .hero-card { max-width: 380px; margin: 0 auto; }
+  .hero-photo-only { max-width: 340px; margin: 0 auto; }
+  .hero-avatar { width: 220px; height: 220px; }
+  .ring-1 { width: 244px; height: 244px; }
+  .ring-2 { width: 276px; height: 276px; }
+  .ring-3 { width: 310px; height: 310px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-highlights { grid-template-columns: 1fr 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -2125,7 +2059,10 @@ img { max-width: 100%; display: block; }
   .hamburger { display: flex; }
 
   .hero { padding: 0 20px 100px; padding-top: calc(var(--nav-height) + 20px); gap: 36px; min-height: 100svh; }
-  .hero-card { padding: 24px 18px; }
+  .hero-avatar { width: 180px; height: 180px; }
+  .ring-1 { width: 200px; height: 200px; }
+  .ring-2 { width: 226px; height: 226px; }
+  .ring-3 { width: 254px; height: 254px; }
   .hero-title { font-size: 2.2rem; letter-spacing: -1px; }
 
   .section { padding: 64px 0; }

@@ -83,22 +83,8 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn);
     .catch(() => console.warn('resume.pdf not found – add it to the portfolio root.'));
 })();
 
-/* ── Profile photo detection ───────────── */
-(function checkPhoto() {
-  const img = new Image();
-  img.onload = () => {
-    const wrap = $('#avatar-wrap');
-    const icon = $('#avatar-icon');
-    if (!wrap) return;
-    if (icon) icon.remove();
-    const el = document.createElement('img');
-    el.src = 'assets/photo.jpg';
-    el.alt = 'Laksh Menroy';
-    el.className = 'avatar-photo';
-    wrap.appendChild(el);
-  };
-  img.src = 'assets/photo.jpg';
-})();
+/* ── Profile photo: hardcoded to assets/image-6.png ── */
+// Photo is set directly in HTML — no JS swap needed.
 
 /* ── Navbar ────────────────────────────── */
 const navbar   = $('#navbar');
@@ -237,10 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
     obs.unobserve(el);
   }, { threshold: 0.2 });
   $$('.skill-category-card').forEach(el => skillObs.observe(el));
-
-  /* Hero counters */
-  const cntObs = observer((el, obs) => { $$('[data-count]', el).forEach(animateCount); obs.unobserve(el); }, { threshold: 0.4 });
-  $$('.hero-card-identity').forEach(el => cntObs.observe(el));
 
   /* Staggered card/pill fade-up */
   const fuObs = observer((el, obs) => { el.classList.add('visible'); obs.unobserve(el); });
