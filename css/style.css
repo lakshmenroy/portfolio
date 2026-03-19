@@ -1787,14 +1787,37 @@ img { max-width: 100%; display: block; }
 
 .lp-stat i { color: var(--accent-light); }
 
-.lp-note {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  margin-top: 14px;
-  line-height: 1.5;
+/* LinkedIn official badge widget container */
+.lp-badge-wrap {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.lp-note a { color: var(--accent-light); text-decoration: underline; }
+/* Make the badge iframe/widget responsive inside the card */
+.lp-badge-wrap .badge-base {
+  width: 100% !important;
+  max-width: 260px;
+}
+
+/* Fallback button (shown if LinkedIn script is blocked) */
+.lp-badge-wrap .btn-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #0077b5;
+  color: white;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.lp-badge-wrap .btn-linkedin:hover {
+  background: #005885;
+  transform: translateY(-2px);
+}
 
 /* =========================================
    CONTACT SECTION
