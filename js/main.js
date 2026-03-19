@@ -27,7 +27,7 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn);
       r: rand(1, 2.2),
       dx: rand(-0.25, 0.25), dy: rand(-0.25, 0.25),
       alpha: rand(0.08, 0.45),
-      rgb: Math.random() > 0.5 ? '124,58,237' : '59,130,246'
+      rgb: Math.random() > 0.5 ? '29,78,216' : '220,38,38'
     };
   }
 
@@ -40,7 +40,7 @@ const on = (el, ev, fn) => el && el.addEventListener(ev, fn);
         const d  = Math.sqrt(dx * dx + dy * dy);
         if (d < 130) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(124,58,237,${0.07 * (1 - d / 130)})`;
+          ctx.strokeStyle = `rgba(29,78,216,${0.06 * (1 - d / 130)})`;
           ctx.lineWidth = 0.6;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -305,5 +305,5 @@ style.textContent = `
 document.head.appendChild(style);
 
 /* ── Dev signature ──────────────────────── */
-console.log('%c LM. ', 'background:linear-gradient(135deg,#7c3aed,#3b82f6);color:#fff;font-size:18px;font-weight:900;padding:4px 10px;border-radius:6px;');
+console.log('%c LM. ', 'background:linear-gradient(135deg,#1d4ed8,#dc2626);color:#fff;font-size:18px;font-weight:900;padding:4px 10px;border-radius:6px;');
 console.log('%cLaksh Menroy | AI/ML Engineer | github.com/lakshmenroy', 'color:#94a3b8;font-size:11px;');
