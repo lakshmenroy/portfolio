@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lakshmen Roy | AI/ML Engineer</title>
+  <meta name="description" content="Lakshmen Roy – AI/ML Engineer specialising in Computer Vision, Edge AI, Kubernetes and smart automation. MSc AI & Robotics student at University of Hertfordshire." />
+  <meta name="keywords" content="AI Engineer, ML Engineer, Computer Vision, PyTorch, Kubernetes, Edge AI, Lakshmen Roy" />
+  <meta property="og:title" content="Lakshmen Roy | AI/ML Engineer" />
+  <meta property="og:description" content="Building smarter, cleaner cities through intelligent AI systems." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">LR<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#updates" class="nav-link">Updates</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="resume.pdf" class="nav-resume-btn" id="resume-nav-btn" target="_blank"><i class="fas fa-file-alt"></i> Resume</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="status-dot"></span> Open to Collaboration
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Lakshmen Roy</span>
+        </h1>
+        <div class="hero-subtitle">
+          <span class="typed-text" id="typed"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-description">
+          AI/ML Engineer passionate about harnessing artificial intelligence to drive innovation in
+          <strong>smart automation</strong> and <strong>sustainable technologies</strong>.
+          Building cleaner, smarter cities through intelligent systems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+          <a href="resume.pdf" class="btn btn-secondary" target="_blank"><i class="fas fa-file-alt"></i> Download Resume</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="social-link" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/lakshmenroy" target="_blank" class="social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:lakshmenroy@gmail.com" class="social-link" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-avatar">
+            <div class="avatar-placeholder" id="avatar-wrap">
+              <!-- JS swaps this for assets/photo.jpg when you add your real photo -->
+              <img src="assets/avatar-placeholder.svg" alt="Lakshmen Roy" class="avatar-photo" id="avatar-icon"/>
+            </div>
+            <div class="avatar-ring ring-1"></div>
+            <div class="avatar-ring ring-2"></div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="2">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Years Exp.</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="6">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Tech Stack</span>
+            </div>
+          </div>
+          <div class="tech-badges">
+            <span class="tech-badge">PyTorch</span>
+            <span class="tech-badge">Computer Vision</span>
+            <span class="tech-badge">Kubernetes</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Edge AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-label">Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">WHO I AM</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm an <strong>AI/ML Engineer</strong> currently contributing to Bucher Municipal's 
+            groundbreaking <strong>Smart Sweeping Assist</strong> project, where I design and test 
+            AI-powered systems integrating computer vision, intelligent control, and custom CANbus protocols.
+          </p>
+          <p>
+            With a <strong>Bachelor of Engineering in Computer Science and Engineering</strong> and 
+            over <strong>1.5+ years of experience at Calsoft</strong>, I've honed my expertise in 
+            Python, PyTorch, and Machine Learning, automating deployment processes and exploring 
+            cutting-edge AI applications.
+          </p>
+          <p>
+            Now pursuing an <strong>MSc in Artificial Intelligence and Robotics</strong> at the 
+            University of Hertfordshire, I'm driven by a vision to shape cleaner, smarter cities 
+            through intelligent technology.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>United Kingdom</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>MSc AI & Robotics</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-briefcase"></i>
+              <span>AI/ML Engineer @ Bucher Municipal</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-code-branch"></i>
+              <span>Open to Collaboration</span>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="btn btn-outline">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+          </a>
+        </div>
+        <div class="about-visual">
+          <div class="about-card-grid">
+            <div class="about-mini-card focus-card">
+              <i class="fas fa-brain"></i>
+              <h4>AI & ML</h4>
+              <p>Deep learning, Computer Vision, Neural Networks</p>
+            </div>
+            <div class="about-mini-card focus-card">
+              <i class="fas fa-robot"></i>
+              <h4>Robotics</h4>
+              <p>Autonomous systems, Edge AI, Embedded devices</p>
+            </div>
+            <div class="about-mini-card focus-card">
+              <i class="fas fa-cloud"></i>
+              <h4>Cloud & DevOps</h4>
+              <p>Kubernetes, Docker, AWS, CI/CD pipelines</p>
+            </div>
+            <div class="about-mini-card focus-card">
+              <i class="fas fa-city"></i>
+              <h4>Smart Cities</h4>
+              <p>Automation, sustainable tech, intelligent control</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">MY JOURNEY</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-side="right">
+          <div class="timeline-dot active-dot">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="timeline-date">Jul 2025 – Present</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>AI & Machine Learning Engineer</h3>
+                <h4><i class="fas fa-building"></i> Bucher Municipal Ltd <span class="location-tag"><i class="fas fa-map-marker-alt"></i> United Kingdom</span></h4>
+              </div>
+              <span class="job-badge current-badge">Current</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built and trained <strong>NozzleNet ResNet-18 models</strong> for embedded edge devices using GStreamer pipeline for real-time computer vision processing in the Smart Sweeping project.</li>
+              <li>Developed and maintained training pipeline applications for preprocessing tasks before model training, ensuring efficient and reproducible workflows.</li>
+              <li>Designed deployment procedures and production guardrails for transitioning from development to production phase.</li>
+              <li>Performed post-software and hardware testing <strong>data analytics</strong>; evaluated model outputs using statistics, SPC charts, and Cohen's d effect size calculations.</li>
+              <li>Introduced <strong>Jira</strong> to organise codebase and project management as team transitions towards production phase.</li>
+              <li>Represented Bucher Municipal at the <strong>University of Hertfordshire's SPECS Networking Event</strong>, engaging with undergrads and postgrads; joined a Careers & Employment panel.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>PyTorch</span><span>ResNet-18</span><span>Computer Vision</span><span>GStreamer</span><span>CANbus</span><span>Edge AI</span><span>Jira</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="left">
+          <div class="timeline-dot">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="timeline-date">Jul 2023 – Aug 2024</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Development Engineer</h3>
+                <h4><i class="fas fa-building"></i> Calsoft <span class="location-tag"><i class="fas fa-map-marker-alt"></i> India</span></h4>
+              </div>
+              <span class="job-badge">Full-time</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Worked as a <strong>Kubernetes Integrator and Python Developer</strong> at cutting-edge cloud infrastructure client project specialising in Kubernetes management solutions.</li>
+              <li>Automated Kubernetes cluster deployments using Python and Terraform, <strong>reducing deployment time by 80%</strong> and sprint cycles from 3 to &lt;2 weeks.</li>
+              <li>Collaborated with teams to optimise automation pipeline, improving application resiliency and streamlining system operations.</li>
+              <li>Built a scalable pipeline for <strong>20+ simultaneous deployments</strong>, enhancing system resiliency.</li>
+              <li>Conducted <strong>2 technical interviews</strong>, aiding team recruitment.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>Kubernetes</span><span>Terraform</span><span>CI/CD</span><span>Cloud Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-side="right">
+          <div class="timeline-dot">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="timeline-date">Jul 2022 – Jul 2023</div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3>Development Intern</h3>
+                <h4><i class="fas fa-building"></i> Calsoft <span class="location-tag"><i class="fas fa-map-marker-alt"></i> India</span></h4>
+              </div>
+              <span class="job-badge intern-badge">Intern</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Served as <strong>Assistant to the Project Manager</strong> and Administrative Support for a US-based client project.</li>
+              <li>Onboarded <strong>50+ employees</strong> for the client, managing records and virtual training in Agile setups.</li>
+              <li>Developed a <strong>Test Impact Analysis tool with OpenAI GPT</strong> in Python, boosting testing efficiency by 20–30%.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>OpenAI GPT</span><span>Agile</span><span>Project Management</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">WHAT I KNOW</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Python</span><span class="skill-level">Intermediate</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>C#</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>TypeScript</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Bash / R</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="55"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Go</span><span class="skill-level">Training</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="30"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI & Machine Learning</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>PyTorch</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Computer Vision</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Scikit-learn</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Neural Networks</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>ONNX / ML Inference</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Kubernetes</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Docker</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>AWS / Azure / GCP</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>CI/CD (GitHub Actions)</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Terraform</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category-card">
+          <div class="skill-cat-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span>Git</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Linux (Ubuntu/CentOS)</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Jira / Confluence</span><span class="skill-level">Proficient</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>GStreamer</span><span class="skill-level">Familiar</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Prometheus</span><span class="skill-level">Exposure</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="40"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="soft-skills-section">
+        <h3 class="soft-skills-title">Soft Skills</h3>
+        <div class="soft-skills-grid">
+          <div class="soft-skill-pill"><i class="fas fa-lightbulb"></i> Problem Solving</div>
+          <div class="soft-skill-pill"><i class="fas fa-users"></i> Teamwork</div>
+          <div class="soft-skill-pill"><i class="fas fa-comments"></i> Communication</div>
+          <div class="soft-skill-pill"><i class="fas fa-clock"></i> Time Management</div>
+          <div class="soft-skill-pill"><i class="fas fa-chalkboard-teacher"></i> Mentoring</div>
+          <div class="soft-skill-pill"><i class="fas fa-running"></i> Agile / Scrum</div>
+          <div class="soft-skill-pill"><i class="fas fa-microscope"></i> Analytical Thinking</div>
+          <div class="soft-skill-pill"><i class="fas fa-handshake"></i> Leadership</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section education-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">MY ACADEMIC PATH</span>
+        <h2 class="section-title">Education &amp; <span class="gradient-text">Qualifications</span></h2>
+      </div>
+      <div class="education-grid">
+
+        <div class="edu-card current-edu">
+          <div class="edu-card-top">
+            <div class="edu-icon"><i class="fas fa-robot"></i></div>
+            <div class="edu-badge current-edu-badge">In Progress</div>
+          </div>
+          <h3>MSc Artificial Intelligence and Robotics</h3>
+          <h4><i class="fas fa-university"></i> University of Hertfordshire</h4>
+          <p class="edu-date"><i class="fas fa-calendar-alt"></i> Sept 2024 – Oct 2026</p>
+          <div class="edu-modules">
+            <h5>Core Modules</h5>
+            <ul>
+              <li>Artificial Life with Robotics</li>
+              <li>Neural Networks and Machine Learning</li>
+              <li>Theory and Practice of AI</li>
+            </ul>
+          </div>
+          <div class="edu-projects">
+            <h5>Projects</h5>
+            <ul>
+              <li>Autonomous Robot Navigation</li>
+              <li>Synthetic Data Generation for Disease Modeling in NetLogo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-card-top">
+            <div class="edu-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="edu-badge completed-badge">Completed</div>
+          </div>
+          <h3>BE Computer Science and Engineering</h3>
+          <h4><i class="fas fa-university"></i> Chitkara Institute of Engineering and Technology</h4>
+          <p class="edu-date"><i class="fas fa-calendar-alt"></i> Sept 2019 – Jun 2023</p>
+          <div class="edu-modules">
+            <h5>Core Modules</h5>
+            <ul>
+              <li>Computer Programming (Python & Java)</li>
+              <li>OOP, Data Structures & Algorithms</li>
+              <li>Operating Systems, Computer Networks</li>
+              <li>Database Management Systems (SQL)</li>
+            </ul>
+          </div>
+          <div class="edu-projects">
+            <h5>Projects</h5>
+            <ul>
+              <li>FashionMNIST Classification using PyTorch</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Certifications Row -->
+      <div class="certs-section">
+        <h3 class="certs-title"><i class="fas fa-certificate"></i> Certifications & Learning</h3>
+        <div class="certs-grid">
+          <div class="cert-card">
+            <i class="fab fa-aws"></i>
+            <span>AWS Cloud Practitioner</span>
+          </div>
+          <div class="cert-card">
+            <i class="fab fa-microsoft"></i>
+            <span>Azure Fundamentals</span>
+          </div>
+          <div class="cert-card">
+            <i class="fas fa-robot"></i>
+            <span>AI/ML Continuous Learning</span>
+          </div>
+          <div class="cert-card">
+            <i class="fab fa-google"></i>
+            <span>Google Cloud Exposure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">WHAT I'VE BUILT</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">AI / ML</button>
+        <button class="filter-btn" data-filter="cloud">Cloud / DevOps</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+
+        <div class="project-card" data-category="ml">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-broom"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn" title="Private – Company Project"><i class="fas fa-lock"></i></a>
+            </div>
+          </div>
+          <span class="project-featured-tag">Featured</span>
+          <h3>NozzleNet – Smart Sweeping AI</h3>
+          <p>Trained ResNet-18 models for embedded edge devices using GStreamer pipeline for real-time computer vision processing. Built production guardrails and deployment procedures for a commercial street-sweeping vehicle.</p>
+          <div class="project-tags">
+            <span>PyTorch</span><span>ResNet-18</span><span>Edge AI</span><span>GStreamer</span><span>CANbus</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="cloud">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-cubes"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn" title="Private – Client Project"><i class="fas fa-lock"></i></a>
+            </div>
+          </div>
+          <h3>Kubernetes Auto-Deployment Pipeline</h3>
+          <p>Automated Kubernetes cluster deployments using Python and Terraform, reducing deployment time by 80% and sprint cycles from 3 to under 2 weeks. Scaled to handle 20+ simultaneous deployments.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Kubernetes</span><span>Terraform</span><span>CI/CD</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-vials"></i></div>
+            <div class="project-links">
+              <a href="#" class="project-link-btn" title="Private"><i class="fas fa-lock"></i></a>
+            </div>
+          </div>
+          <h3>Test Impact Analysis with OpenAI GPT</h3>
+          <p>Developed an intelligent Test Impact Analysis tool using OpenAI GPT API in Python, boosting testing efficiency by 20–30% by intelligently predicting which tests are impacted by code changes.</p>
+          <div class="project-tags">
+            <span>Python</span><span>OpenAI API</span><span>NLP</span><span>Testing</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="robotics">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-robot"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/lakshmenroy" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Autonomous Robot Navigation</h3>
+          <p>MSc project focused on developing autonomous navigation systems for robots using AI-based path planning algorithms and sensor fusion techniques in simulated environments.</p>
+          <div class="project-tags">
+            <span>Robotics</span><span>AI</span><span>Path Planning</span><span>Sensor Fusion</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-dna"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/lakshmenroy" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Synthetic Disease Modeling (NetLogo)</h3>
+          <p>Generated synthetic data for disease spread modeling using NetLogo simulations, applying AI-driven parameter tuning to model realistic epidemic scenarios for research purposes.</p>
+          <div class="project-tags">
+            <span>NetLogo</span><span>AI</span><span>Simulation</span><span>Data Generation</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ml">
+          <div class="project-card-header">
+            <div class="project-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="project-links">
+              <a href="https://github.com/lakshmenroy" class="project-link-btn" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>FashionMNIST Classification</h3>
+          <p>Built a deep learning classifier for the FashionMNIST dataset using PyTorch. Implemented CNN architectures, experimenting with different optimizers and regularisation techniques to maximise classification accuracy.</p>
+          <div class="project-tags">
+            <span>PyTorch</span><span>CNN</span><span>Deep Learning</span><span>Python</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-cta">
+        <a href="https://github.com/lakshmenroy" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github"></i> View All on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LinkedIn Updates Section -->
+  <section id="updates" class="section updates-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">STAY CONNECTED</span>
+        <h2 class="section-title">Recent <span class="gradient-text">Updates</span></h2>
+        <p class="section-subtitle">Latest activity and accomplishments from my LinkedIn</p>
+      </div>
+      <div class="updates-layout">
+        <div class="updates-feed" id="linkedin-feed">
+          <!-- Posts loaded by JS -->
+          <div class="update-card">
+            <div class="update-header">
+              <div class="update-avatar"><i class="fas fa-user"></i></div>
+              <div class="update-meta">
+                <strong>Lakshmen Roy</strong>
+                <span>AI/ML Engineer · Bucher Municipal</span>
+                <span class="update-time"><i class="fas fa-clock"></i> Recent</span>
+              </div>
+              <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="linkedin-icon-btn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+            <div class="update-body">
+              <p>🚀 Excited to share that I represented <strong>Bucher Municipal</strong> at the University of Hertfordshire's SPECS Networking Event! Connected with amazing undergrads and postgrads from Physics, Engineering and Computer Science. Also joined the Careers & Employment panel sharing honest insights on applications, interviews, and growth in AI/ML. Great to bridge industry and academia! 🤝</p>
+            </div>
+            <div class="update-tags">
+              <span>#AI</span><span>#Networking</span><span>#MachineLearning</span><span>#BucherMunicipal</span>
+            </div>
+          </div>
+
+          <div class="update-card">
+            <div class="update-header">
+              <div class="update-avatar"><i class="fas fa-user"></i></div>
+              <div class="update-meta">
+                <strong>Lakshmen Roy</strong>
+                <span>AI/ML Engineer · Bucher Municipal</span>
+                <span class="update-time"><i class="fas fa-clock"></i> Recent</span>
+              </div>
+              <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="linkedin-icon-btn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+            <div class="update-body">
+              <p>🤖 Building the future of urban cleanliness! Working on the <strong>Smart Sweeping Assist</strong> project — training NozzleNet ResNet-18 models for real-time computer vision on embedded edge devices. Fascinating work at the intersection of AI and sustainable city infrastructure. #EdgeAI #ComputerVision</p>
+            </div>
+            <div class="update-tags">
+              <span>#EdgeAI</span><span>#ComputerVision</span><span>#SmartCities</span><span>#PyTorch</span>
+            </div>
+          </div>
+
+          <div class="update-card">
+            <div class="update-header">
+              <div class="update-avatar"><i class="fas fa-user"></i></div>
+              <div class="update-meta">
+                <strong>Lakshmen Roy</strong>
+                <span>MSc AI & Robotics · University of Hertfordshire</span>
+                <span class="update-time"><i class="fas fa-clock"></i> Recent</span>
+              </div>
+              <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="linkedin-icon-btn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+            <div class="update-body">
+              <p>📚 Deep diving into autonomous robotics this semester at the University of Hertfordshire. Working on autonomous navigation systems and synthetic data generation projects. The intersection of AI and robotics is absolutely fascinating — excited to apply this to real-world impact! 🎓</p>
+            </div>
+            <div class="update-tags">
+              <span>#Robotics</span><span>#MSc</span><span>#AI</span><span>#University</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="linkedin-profile-card">
+          <div class="lp-card-top">
+            <div class="lp-avatar"><i class="fas fa-user-tie"></i></div>
+            <div class="lp-badge"><i class="fab fa-linkedin"></i> Profile</div>
+          </div>
+          <h3>Lakshmen Roy</h3>
+          <p class="lp-title">AI/ML Engineer | MSc AI & Robotics</p>
+          <p class="lp-company"><i class="fas fa-building"></i> Bucher Municipal Ltd</p>
+          <p class="lp-location"><i class="fas fa-map-marker-alt"></i> United Kingdom</p>
+          <div class="lp-stats">
+            <div class="lp-stat">
+              <i class="fas fa-graduation-cap"></i>
+              <span>MSc Student</span>
+            </div>
+            <div class="lp-stat">
+              <i class="fas fa-briefcase"></i>
+              <span>2+ Years Exp</span>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank" class="btn btn-linkedin">
+            <i class="fab fa-linkedin"></i> Follow on LinkedIn
+          </a>
+          <p class="lp-note">
+            <i class="fas fa-info-circle"></i> 
+            <em>Live LinkedIn data requires OAuth integration. <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank">View full profile →</a></em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">LET'S TALK</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Open to collaborations, opportunities, or just a chat about AI!</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank">linkedin.com/in/lakshmenroy</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-github"></i>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/lakshmenroy" target="_blank">github.com/lakshmenroy</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <span>United Kingdom</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <h4>Status</h4>
+              <span class="status-available">Open to Collaboration</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpwrjgnd" method="POST">
+          <input type="hidden" name="_subject" value="Portfolio Contact – Lakshmen Roy" />
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Collaboration opportunity..." required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div id="form-success" class="form-success hidden">
+            <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="nav-logo">LR<span class="dot">.</span></span>
+          <p>AI/ML Engineer passionate about building smarter, cleaner cities through intelligent automation.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="resume.pdf" target="_blank">Resume</a>
+        </div>
+        <div class="footer-socials">
+          <h4>Connect</h4>
+          <a href="https://www.linkedin.com/in/lakshmenroy/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/lakshmenroy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Lakshmen Roy · Built with ❤️ · Hosted on GitHub Pages</p>
+        <a href="resume.pdf" class="btn btn-sm-outline" target="_blank"><i class="fas fa-file-alt"></i> View Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
