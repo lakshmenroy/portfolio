@@ -1738,10 +1738,10 @@ img { max-width: 100%; display: block; }
 /* background-image approach — precise, no transform clipping issues */
 .lp-avatar-photo {
   background-image: url('../assets/image-6.png');
-  /* zoom in ~4x so the face fills the 88px circle */
-  background-size: 400%;
-  /* shift right ~50% to centre horizontally, down ~8% to land on the face */
-  background-position: 50% 8%;
+  /* 300% = 3x zoom; image is 1170x1568, face is ~top 12% */
+  background-size: 300%;
+  /* 50% centres horizontally; 12% drops into face (not hairline) */
+  background-position: 50% 12%;
   background-repeat: no-repeat;
 }
 
